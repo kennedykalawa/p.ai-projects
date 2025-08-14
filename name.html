@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Art Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #282c34;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        #name {
+            font-size: 3rem;
+            white-space: nowrap;
+        }
+        .letter {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: pop 0.5s forwards;
+        }
+        @keyframes pop {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, #fff, transparent);
+            animation: sparkle-animation 1.5s infinite;
+        }
+        @keyframes sparkle-animation {
+            0% { opacity: 0; }
+            50% { opacity: 1; transform: scale(1.5); }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div id="name"></div>
+    <script>
+        const nameInput = "Kenny"; // Change this to your name
+        const nameDiv = document.getElementById('name');
+
+        nameInput.split('').forEach((letter, index) => {
+            setTimeout(() => {
+                const span = document.createElement('span');
+                span.textContent = letter;
+                span.style.color = `hsl(${Math.random() * 360}, 100%, 50%)`; // Random color
+                span.classList.add('letter');
+                nameDiv.appendChild(span);
+            }, index * 300); // Delay for each letter
+        });
+
+        // Sparkle effect
+        setInterval(() => {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = Math.random() * window.innerWidth + 'px';
+            sparkle.style.top = Math.random() * window.innerHeight + 'px';
+            document.body.appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 1500); // Remove sparkle after animation
+        }, 300);
+    </script>
+</body>
+</html>
