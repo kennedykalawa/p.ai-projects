@@ -5,12 +5,12 @@ import numpy as np
 emojis = ["😀", "😂", "😎", "😍", "😜", "😡", "😴", "🤯", "🥶", "🤩", "😇", "😭", "🤑", "🤮", "🥳"]
 
 # Load image
-image_path = "/home/ghost-engineer/Pictures/wt4.jpg"  # Replace with your image
-img = Image.open("/home/ghost-engineer/Pictures/wt4.jpg").convert("RGB")
+image_path = "/home/kenny/Pictures/wallpapers/IMG-20241004-WA0034.jpg"  # Replace with your image
+img = Image.open("/home/kenny/Pictures/wallpapers/IMG-20241004-WA0034.jpg").convert("RGB")
 
 # Resize for fewer emojis (smaller = faster)
-emoji_size = 20
-img = img.resize((50, 50))  # Smaller width/height for faster rendering
+emoji_size = 30
+img = img.resize((70, 70))  # Smaller width/height for faster rendering
 
 # Create new blank image for emoji art
 output_img = Image.new("RGB", (img.width * emoji_size, img.height * emoji_size), (255, 255, 255))
