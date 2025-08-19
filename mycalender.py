@@ -88,7 +88,7 @@ class CalendarApp:
 
     def change_theme(self):
         current_bg = self.root.cget("bg")
-        new_bg = "lightblue" if current_bg != "lightblue" else "white"
+        new_bg = "lightgreen" if current_bg != "lightgreen" else "white"
         self.root.configure(bg=new_bg)
         self.calendar_frame.configure(style="Custom.TFrame")
         style = ttk.Style()
