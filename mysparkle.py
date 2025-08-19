@@ -10,7 +10,7 @@ init(autoreset=True)
 colors = [Fore.RED, Fore.GREEN, Fore.YELLOW, Fore.BLUE, Fore.MAGENTA, Fore.CYAN, Fore.WHITE]
 
 # Sparkle effect symbols
-sparkles = ['✨', '🌟', '💫', '*', '+']
+sparkles = ['✨', '🌟', '💫', '*', '+', '🌟']
 
 # Get the name from user
 name = input("Enter your name: ")
@@ -23,4 +23,4 @@ for letter in name:
     sys.stdout.flush()
     time.sleep(0.3)  # delay for animation effect
 
-print(Style.BRIGHT + Fore.WHITE + "\nDone! Your name is shining! 🌠")
+print(Style.BRIGHT + Fore.WHITE + "\n👍Done! Your name is shining! ⚡🌠")
