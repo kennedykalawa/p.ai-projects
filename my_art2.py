@@ -8,7 +8,8 @@ pygame.init()
 # Constants
 WIDTH, HEIGHT = 800, 600
 FPS = 60
-FONT_SIZE = 100
+FONT_SIZE = 120
+print("Who are you")
 NAME = input("Enter your name: ")  # Ask for name
 
 # Colors
